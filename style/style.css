@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    height: 100vh;
+    background-color: blue;
+}
+
+header {
+    background-color:black;
+}
+
+.game {
+    background-color: blueviolet;
+    color: white;
+}
+
+
+.test {
+    border: solid black 2px;
+    height: 200px;
+    background-color: cadetblue;
+}
+
+.game__table__one {
+    background-color: chocolate;
+}
+.game__table {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+}
