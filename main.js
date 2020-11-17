@@ -15,10 +15,17 @@ let green = []
 
 var inputs = document.getElementsByClassName("test");
 
+var button = document.getElementById("clear")
+button.addEventListener('click', clear)
+
 function clear(){
+    clicker = 0
+    red = []
+    green = []
     for (var i = 0; i < inputs.length; i++) {
-    inputs[i].style.backgroundColor = "chocolate"
-    inputs[i].addEventListener("click", test);
+        inputs[i].style.backgroundColor = "chocolate"
+        inputs[i].addEventListener("click", test);
+        inputs[i].style.border = 'solid black 2px'
     }
 }
 clear()
