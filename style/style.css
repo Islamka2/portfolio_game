@@ -21,11 +21,12 @@ header {
 .test {
     border: solid black 2px;
     height: 200px;
-    background-color: cadetblue;
+    /* background-color: chocolate; */
+    /* background-color: cadetblue; */
 }
 
 .game__table__one {
-    background-color: chocolate;
+    /* background-color: chocolate; */
 }
 .game__table {
     display: grid;
