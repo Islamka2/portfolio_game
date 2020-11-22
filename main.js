@@ -19,13 +19,16 @@ var button = document.getElementById("clear")
 button.addEventListener('click', clear)
 
 function clear(){
+    // alert("test")
     clicker = 0
     red = []
     green = []
     for (var i = 0; i < inputs.length; i++) {
-        inputs[i].style.backgroundColor = "chocolate"
+        inputs[i].innerHTML = i+1
+        inputs[i].style.fontSize = '20px'
+        inputs[i].style.backgroundColor = "black"
         inputs[i].addEventListener("click", test);
-        inputs[i].style.border = 'solid black 2px'
+        inputs[i].style.border = 'solid white 2px'
     }
 }
 clear()
@@ -36,102 +39,106 @@ function test() {
         alert("Ходы кончились :(")
     }
     else {
-        if (place.style.backgroundColor === 'chocolate')
+        if (place.innerHTML == 'X' ||  place.innerHTML == 'O') {
+            alert("Это поле занято")
+        }
+        else {
             if (lol == 1) {
-                place.style.backgroundColor = 'red';
+                place.innerHTML = "X"
+                place.style.fontSize = "80px"
                 lol += 1
                 clicker += 1
                 red.push(number)
             }
             else {
-                place.style.backgroundColor = 'green';
+                
+                place.innerHTML = "O"
+                place.style.fontSize = "80px"
                 lol -= 1
                 clicker += 1
                 green.push(number)
             }
-        else {
-            alert("Это поле занято")
         }
     // LOGIC GAME //
     if (red.indexOf('1') != -1 && red.indexOf('2') != -1 && red.indexOf('3') != -1) {
-        one.style.border = 'solid blue 3pxx'
-        two.style.border = 'solid blue 3px'
-        three.style.border = 'solid blue 3px'
+        one.style.border = 'solid red 2pxx'
+        two.style.border = 'solid red 2px'
+        three.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ КРАСНЫЙ!!!")
     } else if (green.indexOf('1') != -1 && green.indexOf('2') != -1 && green.indexOf('3') != -1) {
-        one.style.border = 'solid blue 3pxx'
-        two.style.border = 'solid blue 3px'
-        three.style.border = 'solid blue 3px'
+        one.style.border = 'solid red 2pxx'
+        two.style.border = 'solid red 2px'
+        three.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ ЗЕЛЕНЫЙ!!!")
     } else if (red.indexOf('4') != -1 && red.indexOf('5') != -1 && red.indexOf('6') != -1) {
-        four.style.border = 'solid blue 3px'
-        five.style.border = 'solid blue 3px'
-        six.style.border = 'solid blue 3px'
+        four.style.border = 'solid red 2px'
+        five.style.border = 'solid red 2px'
+        six.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ красный!!!")
     } else if (green.indexOf('4') != -1 && green.indexOf('5') != -1 && green.indexOf('6') != -1) {
-        four.style.border = 'solid blue 3px'
-        five.style.border = 'solid blue 3px'
-        six.style.border = 'solid blue 3px'
+        four.style.border = 'solid red 2px'
+        five.style.border = 'solid red 2px'
+        six.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ зеленый!!!")
     } else if (red.indexOf('7') != -1 && red.indexOf('8') != -1 && red.indexOf('9') != -1) {
-        seven.style.border = 'solid blue 3px'
-        eight.style.border = 'solid blue 3px'
-        nine.style.border = 'solid blue 3px'
+        seven.style.border = 'solid red 2px'
+        eight.style.border = 'solid red 2px'
+        nine.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ красный!!!")
     } else if (green.indexOf('7') != -1 && green.indexOf('8') != -1 && green.indexOf('9') != -1) {
-        seven.style.border = 'solid blue 3px'
-        eight.style.border = 'solid blue 3px'
-        nine.style.border = 'solid blue 3px'
+        seven.style.border = 'solid red 2px'
+        eight.style.border = 'solid red 2px'
+        nine.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ зеленый!!!")
     } else if (red.indexOf('1') != -1 && red.indexOf('4') != -1 && red.indexOf('7') != -1) {
-        one.style.border = 'solid blue 3px'
-        four.style.border = 'solid blue 3px'
-        seven.style.border = 'solid blue 3px'
+        one.style.border = 'solid red 2px'
+        four.style.border = 'solid red 2px'
+        seven.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ красный!!!")
     } else if (green.indexOf('1') != -1 && green.indexOf('4') != -1 && green.indexOf('7') != -1) {
-        one.style.border = 'solid blue 3px'
-        four.style.border = 'solid blue 3px'
-        seven.style.border = 'solid blue 3px'
+        one.style.border = 'solid red 2px'
+        four.style.border = 'solid red 2px'
+        seven.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ зеленый!!!")
     } else if (red.indexOf('2') != -1 && red.indexOf('5') != -1 && red.indexOf('8') != -1) {
-        two.style.border = 'solid blue 3px'
-        five.style.border = 'solid blue 3px'
-        eight.style.border = 'solid blue 3px'
+        two.style.border = 'solid red 2px'
+        five.style.border = 'solid red 2px'
+        eight.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ красный!!!")
     } else if (green.indexOf('2') != -1 && green.indexOf('5') != -1 && green.indexOf('8') != -1) {
-        two.style.border = 'solid blue 3px'
-        five.style.border = 'solid blue 3px'
-        eight.style.border = 'solid blue 3px'
+        two.style.border = 'solid red 2px'
+        five.style.border = 'solid red 2px'
+        eight.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ зеленый!!!")
     } else if (red.indexOf('3') != -1 && red.indexOf('6') != -1 && red.indexOf('9') != -1) {
-        three.style.border = 'solid blue 3px'
-        six.style.border = 'solid blue 3px'
-        nine.style.border = 'solid blue 3px'
+        three.style.border = 'solid red 2px'
+        six.style.border = 'solid red 2px'
+        nine.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ красный!!!")
     } else if (green.indexOf('3') != -1 && green.indexOf('6') != -1 && green.indexOf('9') != -1) {
-        three.style.border = 'solid blue 3px'
-        six.style.border = 'solid blue 3px'
-        nine.style.border = 'solid blue 3px'
+        three.style.border = 'solid red 2px'
+        six.style.border = 'solid red 2px'
+        nine.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ зеленый!!!")
     } else if (red.indexOf('1') != -1 && red.indexOf('5') != -1 && red.indexOf('9') != -1) {
-        one.style.border = 'solid blue 3px'
-        five.style.border = 'solid blue 3px'
-        nine.style.border = 'solid blue 3px'
+        one.style.border = 'solid red 2px'
+        five.style.border = 'solid red 2px'
+        nine.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ красный!!!")
     } else if (green.indexOf('1') != -1 && green.indexOf('5') != -1 && green.indexOf('9') != -1) {
-        one.style.border = 'solid blue 3px'
-        five.style.border = 'solid blue 3px'
-        nine.style.border = 'solid blue 3px'
+        one.style.border = 'solid red 2px'
+        five.style.border = 'solid red 2px'
+        nine.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ зеленый!!!")
     } else if (red.indexOf('3') != -1 && red.indexOf('5') != -1 && red.indexOf('7') != -1) {
-        three.style.border = 'solid blue 3px'
-        five.style.border = 'solid blue 3px'
-        seven.style.border = 'solid blue 3px'
+        three.style.border = 'solid red 2px'
+        five.style.border = 'solid red 2px'
+        seven.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ красный!!!")
     } else if (green.indexOf('3') != -1 && green.indexOf('5') != -1 && green.indexOf('7') != -1) {
-        three.style.border = 'solid blue 3px'
-        five.style.border = 'solid blue 3px'
-        seven.style.border = 'solid blue 3px'
+        three.style.border = 'solid red 2px'
+        five.style.border = 'solid red 2px'
+        seven.style.border = 'solid red 2px'
         alert("ПОБЕДИЛ зеленый!!!")
     }
     
